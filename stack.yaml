@@ -1,0 +1,86 @@
+flags: {}
+packages:
+- reflex/
+- reflex-dom/
+- reflex-todomvc/
+- location:
+    git: git@github.com:ghcjs/ghcjs-dom
+    commit: 3942dc1435e7833ee9e6cb12b93768bca6b405d0
+  extra-dep: true
+setup-info:
+  ghcjs:
+    source:
+      ghcjs-0.2.0.20151001_ghc-7.10.2:
+        url: https://github.com/fizruk/ghcjs/releases/download/v0.2.0.20151001/ghcjs-0.2.0.20151001.tar.gz
+# these come from stack solver
+extra-deps:
+- Glob-0.7.5
+- MemoTrie-0.6.2
+- StateVar-1.1.0.1
+- abstract-deque-0.3
+- abstract-par-0.3.3
+- adjunctions-4.2.2
+- ansi-terminal-0.6.2.3
+- ansi-wl-pprint-0.6.7.3
+- base-orphans-0.4.4
+- bifunctors-5
+- blaze-builder-0.4.0.1
+- cassava-0.4.4.0
+- cereal-0.4.1.1
+- comonad-4.2.7.2
+- contravariant-1.3.3
+- cpphs-1.19.3
+- criterion-1.1.0.0
+- data-default-0.5.3
+- data-default-class-0.0.1
+- data-default-instances-base-0.0.1
+- data-default-instances-containers-0.0.1
+- data-default-instances-dlist-0.0.1
+- data-default-instances-old-locale-0.0.1
+- dependent-map-0.1.1.3
+- dependent-sum-0.2.1.0
+- dependent-sum-template-0.0.0.4
+- distributive-0.4.4
+- erf-2.0.0.0
+- exception-transformers-0.4.0.1
+- exceptions-0.8.0.2
+- file-embed-0.0.9
+- free-4.12.1
+- ghcjs-dom-0.2.1.0
+- haskell-src-exts-1.16.0.1
+- haskell-src-meta-0.6.0.10
+- hastache-0.6.1
+- ieee754-0.7.6
+- kan-extensions-4.2.3
+- lens-4.13
+- math-functions-0.1.5.2
+- monad-par-0.3.4.7
+- monad-par-extras-0.3.3
+- mwc-random-0.13.3.2
+- nats-1
+- optparse-applicative-0.12.0.0
+- parsec-3.1.9
+- polyparse-1.11
+- prelude-extras-0.4.0.2
+- profunctors-5.1.1
+- random-1.1
+- ref-tf-0.4
+- reflection-2.1
+- safe-0.3.9
+- semigroupoids-5.0.0.4
+- semigroups-0.16.2.2
+- statistics-0.13.2.3
+- tagged-0.8.1
+- th-expand-syns-0.3.0.6
+- th-extras-0.0.0.2
+- th-lift-0.7.2
+- th-orphans-0.12.2
+- th-reify-many-0.1.3
+- these-0.6.1.0
+- transformers-compat-0.4.0.4
+- vector-algorithms-0.7.0.1
+- vector-binary-instances-0.2.1.0
+- vector-th-unbox-0.2.1.2
+- void-0.7.1
+compiler-check: match-exact
+resolver: ghcjs-0.2.0.20151001_ghc-7.10.2

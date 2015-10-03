@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -eu
+
+# this can be handled inside stack.yaml, but I'm lazy to submit PRs or forks bumping deps atm :P
+git clone -b develop https://github.com/ryantrinkle/reflex.git
+git clone -b hamishmack-master https://github.com/ryantrinkle/reflex-dom.git
+git clone -b ghcjs-improved-base https://github.com/ryantrinkle/reflex-todomvc.git
+
+repos=(reflex reflex-dom)
+hashs=(4476fd52ba36bd78c122ccd8ea3a2e22fd8daf57 a60ae687cdc284a8eb3776fc95aa2adefc51e7ec)
+
+for i in ${!repos[*]}; do
+    repo=${repos[$i]}
+    commit=${hashs[$i]}
+
+    cd $repo
+    git reset --hard $commit
+    git apply ../$repo.patch
+    cd ..
+done
+
+
+stack setup
+stack build
+open $(stack path --local-install-root)/bin/reflex-todomvc.jsexe/index.html
+
