@@ -4,7 +4,7 @@ packages:
 - reflex-dom/
 - reflex-todomvc/
 - location:
-    git: git@github.com:ghcjs/ghcjs-dom
+    git: https://github.com/ghcjs/ghcjs-dom
     commit: 3942dc1435e7833ee9e6cb12b93768bca6b405d0
   extra-dep: true
 setup-info:
