@@ -5,7 +5,7 @@ using `stack` latest `ghcjs` support to effortlessly compile `reflex-todomvc`
 
 ## Setup
 
-make sure you have installed `stack` >= 0.1.7 (not released yet) https://github.com/commercialhaskell/stack/commit/4797dedd12aedc661697625549c52de8d335ffaf
+make sure you have installed `stack` >= 0.1.7  https://github.com/commercialhaskell/stack
 
 ``` sh
 git clone https://github.com/luigy/try-stack-reflex
@@ -34,4 +34,4 @@ cd try-stack-reflex
 
 ## Caveats
 
-requires having `ghc` compiler in your `PATH` commercialhaskell/stack/issues/1258
+requires having `ghc` compiler in your `PATH` https://github.com/commercialhaskell/stack/issues/1258
