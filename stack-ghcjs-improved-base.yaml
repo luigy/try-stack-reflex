@@ -1,29 +1,31 @@
-flags: {}
+resolver: lts-5.1
+compiler: ghcjs-0.2.0.20160202_ghc-7.10.2
+
 
 packages:
-- location: # assume this is your main project
-    git: https://github.com/ryantrinkle/reflex-todomvc.git
-    commit: 9355d48f1fbdd8a5d09289a7d1ff12108e9a8f77 # improved-base
+- location: reflex-todomvc
+
 - location:
     git: https://github.com/ryantrinkle/reflex.git
-    commit: 784f9f79396ae713a03fc4d81f8a67b75d6ade1c # need a few package bumps not present in hackage release yet
+    commit: 5b5a1c8d540ea9058988d4c564e2823aa099b840
   extra-dep: true
+
 - location:
     git: https://github.com/ryantrinkle/reflex-dom.git
-    commit: a60ae687cdc284a8eb3776fc95aa2adefc51e7ec # hamishmack-master (improved-base compatible)
+    commit: 89117143f5f19d95fba55cfb56a3577ba15e7aea
   extra-dep: true
 
-resolver: lts-3.10
 
-compiler: ghcjs-0.2.0.20151001_ghc-7.10.2
-compiler-check: match-exact
+extra-deps:
+- ghcjs-dom-0.2.3.1
+- ref-tf-0.4
+
+
+require-stack-version: ">= 0.1.8"
 setup-info:
   ghcjs:
     source:
-      ghcjs-0.2.0.20151001_ghc-7.10.2:
-        url: "https://github.com/fizruk/ghcjs/releases/download/v0.2.0.20151001/ghcjs-0.2.0.20151001.tar.gz"
+      ghcjs-0.2.0.20160202_ghc-7.10.2:
+        url: "http://ghcjs.luite.com/master-20160202.tar.gz"
 
-extra-deps:
-  - ref-tf-0.4
-  - these-0.6.1.0
-  - ghcjs-dom-0.2.2.0 # improved-base compatible with (2015-10-01 ghcjs)
+

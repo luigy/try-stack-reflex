@@ -1,0 +1,31 @@
+diff --git a/ghcjs.cabal b/ghcjs.cabal
+index 51a4bcb..215fcf9 100644
+--- a/ghcjs.cabal
++++ b/ghcjs.cabal
+@@ -1,5 +1,5 @@
+ Name:           ghcjs
+-Version:        0.2.0.20151020
++Version:        0.2.0.20160201
+ Description:    Haskell to JavaScript compiler
+ License:        MIT
+ License-file:   LICENSE
+diff --git a/stack.yaml b/stack.yaml
+index 2a4df46..e9a4e27 100644
+--- a/stack.yaml
++++ b/stack.yaml
+@@ -1 +1 @@
+-resolver: lts-4.1
++resolver: lts-3.6
+diff --git a/utils/update_archives.sh b/utils/update_archives.sh
+index fb0ef7b..2d9f749 100755
+--- a/utils/update_archives.sh
++++ b/utils/update_archives.sh
+@@ -139,7 +139,7 @@ STATUS=`git status --porcelain`
+ if [ ${#STATUS} -gt 0 ]
+ then
+     echo "working tree is dirty, run from a clean working tree"
+-    exit 1
++    # exit 1
+ fi
+ 
+ # This is a simulation of git symbolic-ref --short -q HEAD, which doesn't work with

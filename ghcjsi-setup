@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -e
+
+setup_compiler() {
+    local repo_url="$1"
+    local repo_branch="$2"
+    local clone_path="$3"
+    local patch_path="$4"
+    local ghcjs_name="$5"
+    local ghc_name="$6"
+
+    if [ -d $clone_path ]; then return 0; fi
+    git clone -b $repo_branch $repo_url $clone_path
+    pushd $clone_path
+    git apply $patch_path
+    stack sdist
+    place_the_sauce $ghcjs_name $ghc_name
+    popd
+}
+
+# place sdist where stack puts its compilers
+place_the_sauce() {
+    local ghcjs="$1"
+    local ghc="$2"
+    local out_name="${ghcjs}_$ghc"
+
+    local dist_path="$(stack path --dist-dir)"
+    local compilers_path="$(stack path --ghc-paths)"
+
+    echo "$dist_path/$ghcjs.tar.gz"
+    echo "$compilers_path/$out_name.tar.gz"
+    cp -n "$dist_path/$ghcjs.tar.gz" "$compilers_path/$out_name.tar.gz"
+}
